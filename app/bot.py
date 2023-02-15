@@ -43,7 +43,7 @@ def get_firstName(message): #получаем фамилию
 def get_secondName(message):
     usr.secondName = message.text
     bot.send_message(message.from_user.id, 'Напиши дату.')
-    bot.send_message(message.from_user.id, 'Если требуется сегодняшняя дата\n, напиши /today.')
+    bot.send_message(message.from_user.id, 'Если требуется сегодняшняя дата,\nнапиши /today.')
     bot.register_next_step_handler(message, get_date)
 
 def get_date(message):
