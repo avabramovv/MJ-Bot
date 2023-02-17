@@ -16,7 +16,7 @@ def is_forbiden_name(name, message):
 
         return True
 
-bot = telebot.TeleBot('6120587308:AAEv9RLq2DrXIexeIOTt0X8DqI837ufaCMc')
+bot = telebot.TeleBot('YOUR TOKEN')
 print('Telebot started.\nPress Ctr-C to terminate the proccess\n')
 
 usr = texCompiler.UserInfo()
