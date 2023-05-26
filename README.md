@@ -4,9 +4,10 @@
 ```
 $ sudo apt install texlive-full
 $ pip install pyTelegramBotAPI
+$ pip install pylatex
 ```
 
 ## How to run 
 ```
-python3 bot.py
+$ python3 app/bot.py
 ```
