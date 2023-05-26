@@ -1,4 +1,4 @@
-Examples
+# Examples
 -------------
 
 In `this file 
