@@ -9,8 +9,9 @@ from entities_handler import ent2latex, only_quots
 
 import shutil
 
-# bot = telebot.TeleBot('5985204855:AAFerpLSgfqZV8YLt_sUBl4TVKg1_YYJ1Fk') # mayTestBot
-bot = telebot.TeleBot('6120587308:AAFuuYyA620s-qjTAO-XLA3fhD07tNoGe6M')
+TOKEN = ''
+
+bot = telebot.TeleBot(TOKEN)
 print('Bot started.\nPress Ctr-C to terminate the proccess\n')
 
 users = {}
