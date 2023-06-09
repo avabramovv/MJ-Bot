@@ -7,3 +7,7 @@ you can see the result pdf, which was built by bot in video below.
 
 In `this video <https://disk.yandex.ru/i/P_FBafmOciwpTQ>`__
 you can see how the bot works.
+
+In `this file 
+<https://github.com/avabramovv/MJ-Bot/blob/main/examples/your_file%20(18).pdf>`__
+you can see the final report, maded with bot.
