@@ -9,9 +9,7 @@ from entities_handler import ent2latex, only_quots
 
 import shutil
 
-TOKEN = ''
-
-bot = telebot.TeleBot(TOKEN)
+bot = telebot.TeleBot('6120587308:AAGy1kJpZM3v9JFwqMaJhI1NUjuxRTTeUdo')
 print('Bot started.\nPress Ctr-C to terminate the proccess\n')
 
 users = {}
@@ -211,7 +209,7 @@ def set_title_type(message):
     if message.text == 'Исследовательский':
         users["{0}".format(message.chat.id)].type_ = 'б исследовательском'
     elif message.text == 'Программный':
-        users["{0}".format(message.chat.id)].type = 'программном'
+        users["{0}".format(message.chat.id)].type_ = ' программном'
     else:
         bot.send_message(message.chat.id, '❗️ Выберите ответ на кнопке')
         bot.send_message(message.chat.id, '⚠️ Введите тип вашего проекта', reply_markup=type_reply_kb())
@@ -668,12 +666,16 @@ def bib_set_label(message, bib_ref):
 
     bot.send_message(message.chat.id, 
                          '⚠️ Введите <b>Автора</b>\n\n'\
-                         'Например: <i>Nadezhda Chirkova</i> или <i>Donald E. Knuth</i>', 
+                         'Например: <i>Nadezhda Chirkova</i> или <i>Donald E. Knuth</i>\n'\
+                         'Если конкретного автора нет, введите 0\n', 
                          parse_mode='HTML')
     bot.register_next_step_handler(message, bib_set_author, bib_ref)
 
 def bib_set_author(message, bib_ref):
-    bib_ref.author = message.text
+    if message.text != '0':
+        bib_ref.author = message.text
+    else:
+        bib_ref.author = ''
 
     bot.send_message(message.chat.id, 
                          '⚠️ Введите <b>название</b>\n\n'\
