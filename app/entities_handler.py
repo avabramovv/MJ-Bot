@@ -9,13 +9,16 @@ def only_quots(text):
             if (i > 0 and i < len(text) and text[i - 1] == ' ' and text[i + 1] == ' '):
                 result += '-'
 
+        if (i < len(text) and text[i] == '_'):
+            result += r'\_'
+
         if (text[i] == '"' and is_first_quot):
             is_first_quot = not is_first_quot
             result += "``"
         elif(text[i] == '"' and not is_first_quot):
             is_first_quot = not is_first_quot
             result += "''"
-        else:
+        elif text[i] != '_':
             result += text[i]
         
 
@@ -23,7 +26,6 @@ def only_quots(text):
 
 def ent2latex(message):
     if message.entities == None:
-        print('Нет таких')
         return message.text
     
     offsets = {}
